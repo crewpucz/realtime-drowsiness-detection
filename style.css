@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.main {
+    background: linear-gradient(160deg, #0f0c29 0%, #1a1a3e 40%, #24243e 100%);
+}
+
+.block-container {
+    padding-top: 2rem;
+}
+
+/* ===== Header ===== */
+.header-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+}
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.header-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.02em;
+}
+.header-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+    font-weight: 400;
+}
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+/* ===== Status Cards ===== */
+.status-card {
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.status-awake {
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.1);
+}
+.status-warning {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.1);
+}
+.status-alert {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.2);
+    animation: alertPulse 1.5s ease-in-out infinite;
+}
+.status-inactive {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+@keyframes alertPulse {
+    0%, 100% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.2); }
+    50% { box-shadow: 0 0 60px rgba(239, 68, 68, 0.4); }
+}
+
+.status-icon { font-size: 2.5rem; margin-bottom: 8px; }
+.status-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 4px 0;
+    letter-spacing: 0.02em;
+}
+.status-sub {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* ===== Stat Cards ===== */
+.stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+}
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+.stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+.stat-sub {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* ===== Progress Bar ===== */
+.progress-container {
+    margin-top: 16px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+}
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.progress-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+}
+.progress-value {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+}
+.progress-track {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 99px;
+    height: 8px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 8px;
+    border-radius: 99px;
+    transition: width 0.4s ease, background 0.4s ease;
+}
+.progress-green { background: linear-gradient(90deg, #22c55e, #4ade80); }
+.progress-yellow { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.progress-red { background: linear-gradient(90deg, #ef4444, #f87171); }
+
+/* ===== Camera Section ===== */
+.camera-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.camera-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: blink 1.5s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ===== Section Title ===== */
+.section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== Streamlit Overrides ===== */
+#MainMenu, footer, header { visibility: hidden; }
+.stApp > header { display: none; }
+
+div[data-testid="stVerticalBlock"] > div {
+    gap: 0.5rem;
+}
+
+/* WebRTC video styling */
+video {
+    border-radius: 12px !important;
+}
