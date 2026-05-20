@@ -297,24 +297,14 @@ with col_video:
         "iceServers": [
             {"urls": ["stun:stun.relay.metered.ca:80"]},
             {
-                "urls": ["turn:a.relay.metered.ca:80"],
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"],
-            },
-            {
-                "urls": ["turn:a.relay.metered.ca:80?transport=tcp"],
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"],
-            },
-            {
-                "urls": ["turn:a.relay.metered.ca:443"],
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"],
-            },
-            {
-                "urls": ["turns:a.relay.metered.ca:443?transport=tcp"],
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"],
+                "urls": [
+                    "turn:adit-tes-app.relay.metered.ca:80",
+                    "turn:adit-tes-app.relay.metered.ca:80?transport=tcp",
+                    "turn:adit-tes-app.relay.metered.ca:443",
+                    "turns:adit-tes-app.relay.metered.ca:443?transport=tcp",
+                ],
+                "username": "1cd791f971ec6702d945d77d",
+                "credential": "5VkeCbV4L7koTR6w",
             },
         ]
     })
